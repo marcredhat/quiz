@@ -10,3 +10,30 @@ sudo dnf -y install -y  gd curl ImageMagick   texlive  zbar mysql-server httpd p
 
 
 ```
+
+
+vim /etc/httpd/conf/httpd.conf
+Modify ServerName
+ServerName localhost:80
+
+
+sudo systemctl start mysqld httpd memcached
+
+sudo systemctl enable mysqld httpd memcached
+
+sudo systemctl status mysqld httpd memcached
+
+
+mysql -u root
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+FLUSH PRIVILEGES;
+quit;
+
+Check that you can connect as root with the new password
+mysql -u root -h localhost -p
+
+cd /var/www/html
+
+wget https://github.com/tecnickcom/tcexam/archive/master.zip
+
+unzip master.zip
