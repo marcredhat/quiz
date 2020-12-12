@@ -50,6 +50,9 @@ php-fpm.conf
 php-fpm.d
 php.ini
 
+
+In php, comment all lines referring to magic quotes
+
 ls /etc/httpd/modules/ | grep php
 libphp7.so
 
@@ -63,3 +66,8 @@ Comment sudo vim /etc/httpd/conf.modules.d/00-mpm.conf: #LoadModule mpm_event_mo
 /etc/httpd/conf/httpd.conf
 
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+
+
+http://127.0.0.1/tcexam/admin/code/index.php
+
+admin/1234
