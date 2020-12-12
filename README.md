@@ -17,7 +17,7 @@ sudo dnf -y install -y  gd curl ImageMagick   texlive  zbar mysql-server httpd p
 
 ```
 
-
+```text
 vim /etc/httpd/conf/httpd.conf
 Modify ServerName
 ServerName localhost:80
@@ -71,3 +71,4 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 http://127.0.0.1/tcexam/admin/code/index.php
 
 admin/1234
+```
