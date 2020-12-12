@@ -41,6 +41,9 @@ mysql -u root -h localhost -p
 cd /var/www/html
 sudo git clone https://github.com/tecnickcom/tcexam.git
 
+semanage fcontext -R -a -t httpd_sys_rw_content_t '/var/www/html/tcexam/'
+restorecon -R -v '/var/www/html/tcexam/'
+
 ls /etc | grep php
 php.d
 php-fpm.conf
