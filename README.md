@@ -52,25 +52,33 @@ php.ini
 
 
 In php, comment all lines referring to magic quotes
+```
 
-ls /etc/httpd/modules/ | grep php
-libphp7.so
 
-LoadModule php7_module modules/libphp7.so
-
+```bash
 sudo yum module install php:7.2
 sudo systemctl enable --now php-fpm
+```
 
-Comment 
-#LoadModule mpm_event_module modules/mod_mpm_event.so
-in
-/etc/httpd/conf.modules.d/00-mpm.conf
+```bash
+ls /etc/httpd/modules/ | grep php
+libphp7.so
+```
 
-/etc/httpd/conf/httpd.conf
-
+```text
+In /etc/httpd/conf/httpd.conf:
+LoadModule php7_module modules/libphp7.so
 LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
+```
+
+```text
+In /etc/httpd/conf.modules.d/00-mpm.conf,
+comment 
+#LoadModule mpm_event_module modules/mod_mpm_event.so
+```
 
 
+```text
 http://127.0.0.1/tcexam/admin/code/index.php
 
 admin/1234
