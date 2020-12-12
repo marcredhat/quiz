@@ -1,4 +1,4 @@
-On RHEL 8.2:
+## Install TCExam (Open Source system for electronic exams) on RHEL 8.2:
 
 See https://tcexam.org/docs/installation/
 
@@ -61,7 +61,10 @@ LoadModule php7_module modules/libphp7.so
 sudo yum module install php:7.2
 sudo systemctl enable --now php-fpm
 
-Comment sudo vim /etc/httpd/conf.modules.d/00-mpm.conf: #LoadModule mpm_event_module modules/mod_mpm_event.so
+Comment 
+#LoadModule mpm_event_module modules/mod_mpm_event.so
+in
+/etc/httpd/conf.modules.d/00-mpm.conf
 
 /etc/httpd/conf/httpd.conf
 
@@ -71,4 +74,10 @@ LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 http://127.0.0.1/tcexam/admin/code/index.php
 
 admin/1234
+```
+
+
+```bash
+From laptop:
+sudo ssh marc@127.0.0.1 -p 2222 -L 80:localhost:80
 ```
