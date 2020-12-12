@@ -4,6 +4,10 @@ See https://tcexam.org/docs/installation/
 
 ```bash
 
+See 
+https://access.redhat.com/solutions/2662201
+https://computingforgeeks.com/how-to-install-php-7-2-7-1-on-rhel-8/
+
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 sudo rpm -ivh http://www.rpmfind.net/linux/epel/7/x86_64/Packages/z/zbar-0.10-27.el7.x86_64.rpm
 sudo dnf -y install libwmf
@@ -47,3 +51,12 @@ ls /etc/httpd/modules/ | grep php
 libphp7.so
 
 LoadModule php7_module modules/libphp7.so
+
+sudo yum module install php:7.2
+sudo systemctl enable --now php-fpm
+
+Comment sudo vim /etc/httpd/conf.modules.d/00-mpm.conf: #LoadModule mpm_event_module modules/mod_mpm_event.so
+
+/etc/httpd/conf/httpd.conf
+
+LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
