@@ -1,5 +1,7 @@
 On RHEL 8.2:
 
+See https://tcexam.org/docs/installation/
+
 ```bash
 
 sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -33,7 +35,15 @@ Check that you can connect as root with the new password
 mysql -u root -h localhost -p
 
 cd /var/www/html
+sudo git clone https://github.com/tecnickcom/tcexam.git
 
-wget https://github.com/tecnickcom/tcexam/archive/master.zip
+ls /etc | grep php
+php.d
+php-fpm.conf
+php-fpm.d
+php.ini
 
-unzip master.zip
+ls /etc/httpd/modules/ | grep php
+libphp7.so
+
+LoadModule php7_module modules/libphp7.so
