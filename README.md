@@ -1,8 +1,11 @@
 ## Install TCExam (Open Source system for electronic exams) on RHEL 8.2:
 
 See 
+
 https://tcexam.org/docs/installation/
+
 https://access.redhat.com/solutions/2662201
+
 https://computingforgeeks.com/how-to-install-php-7-2-7-1-on-rhel-8/
 
 
