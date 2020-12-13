@@ -1,4 +1,8 @@
-## Install TCExam (Open Source system for electronic exams) on RHEL 8.2:
+## Install TCExam (Open Source system for electronic exams) on RHEL 8.2
+
+
+Short video demo at: https://www.youtube.com/watch?v=Z7-Nxf4o1CY
+
 
 See 
 
